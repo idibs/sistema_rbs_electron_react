@@ -35,23 +35,23 @@ export default function Tabela({ inputs, data }) {
                 <div>
                     <h1 className="font-bold">Filtros:</h1>
                     <div className='flex justify-between'>
-                    <div className="grid grid-cols-2 py-2 gap-2">
-                        {inputs.map((element, idx) => (
-                            <input
-                                key={idx}
-                                type={element.type}
-                                placeholder={element.placeholder}
-                                name={element.name}
-                                value={filters[element.value]}
-                                onChange={handleChange}
-                                className="border border-gray-500 px-4 py-2 rounded"
-                            />
-                        ))}
-                    </div>
-                    <button type="button" className="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
-                        Criar registro
-                        </button>
+                        <div className="grid grid-cols-2 py-2 gap-2">
+                            {inputs.map((element, idx) => (
+                                <input
+                                    key={idx}
+                                    type={element.type}
+                                    placeholder={element.placeholder}
+                                    name={element.name}
+                                    value={filters[element.value]}
+                                    onChange={handleChange}
+                                    className="border border-gray-500 px-4 py-2 rounded"
+                                />
+                            ))}
                         </div>
+                        <button type="button" className="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 h-1/2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+                            Criar registro
+                        </button>
+                    </div>
                 </div>
             <div>
                 <table className="table-auto border-collapse w-full">
