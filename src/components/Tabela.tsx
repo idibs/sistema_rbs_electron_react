@@ -54,14 +54,13 @@ export default function Tabela({ inputs, data }) {
                     </div>
                 </div>
             <div>
-                <table className="table-auto border-collapse w-full">
+                <table className="table-auto border-separate border-spacing-0 w-full">
                     <thead>
                         <tr>
                             {Object.keys(data[0]).map((key) => (
                                 <th key={key} className="border border-gray-500 px-1 py-1">{key}</th>
                             ))}
                                 <th className="border border-gray-500 px-1 py-1">Opções</th>
-                            
                         </tr>
                     </thead>
                     <tbody>
@@ -70,7 +69,7 @@ export default function Tabela({ inputs, data }) {
                                     {Object.values(item).map((value, idx) => (
                                         <td key={idx} className="text-center border border-gray-500 py-1">{value}</td>
                                     ))}    
-                                    <td className="text-center border flex justify-evenly py-1"> 
+                                    <td className="border border-gray-500 px-1 flex justify-evenly py-2"> 
                                         <Link to="/estoque">
                                             <MdEdit />
                                         </Link>

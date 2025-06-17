@@ -2,6 +2,7 @@ import { app, BrowserWindow } from "electron";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const iconPath = path.join(__dirname, "..", "public", "icon.ico");
 process.env.APP_ROOT = path.join(__dirname, "..");
 const VITE_DEV_SERVER_URL = process.env["VITE_DEV_SERVER_URL"];
 const MAIN_DIST = path.join(process.env.APP_ROOT, "dist-electron");
@@ -38,7 +39,8 @@ function createWindow() {
     // permite redimensionar a janela
     fullscreenable: true,
     // permite colocar a janela em tela cheia
-    icon: path.join(process.env.VITE_PUBLIC, "electron-vite.svg"),
+    icon: iconPath,
+    // ícone da janela
     webPreferences: {
       preload: path.join(__dirname, "preload.mjs")
     }

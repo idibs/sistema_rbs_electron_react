@@ -5,6 +5,8 @@ import path from 'node:path'
 
 //const require = createRequire(import.meta.url)
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
+// Caminho para a pasta 'assets' na raiz do projeto
+const iconPath = path.join(__dirname, '..', 'public', 'icon.ico');
 
 // The built directory structure
 //
@@ -43,7 +45,7 @@ function createWindow() {
     minimizable: true, // permite minimizar a janela
     resizable: true, // permite redimensionar a janela
     fullscreenable: true, // permite colocar a janela em tela cheia
-    icon: path.join(process.env.VITE_PUBLIC, 'electron-vite.svg'),
+    icon: iconPath, // ícone da janela
     webPreferences: {
       preload: path.join(__dirname, 'preload.mjs'),
     },
